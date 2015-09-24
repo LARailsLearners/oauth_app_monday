@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
     token = auth_hash.credentials.token
     email = auth_hash.info.email
 
-    User.find_or_create_by(email:email) do |user|
+    find_or_create_by(email: email) do |user|
       user.token = token
     end
 
